@@ -1,0 +1,101 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using FirstProject.Calc;
+
+namespace FirstProject
+{
+    class Program
+
+    {
+        static void Main(string[] args)
+        {
+            Loop:
+            Console.WriteLine("Hello and welcome to my calculator! Please enter which operation you would like to use. (+,-,*,/,%)");
+
+            //User enters operater
+
+            Start:
+            string op = Console.ReadLine();
+
+            //Checking if opperator is valid
+
+            if (op == "+" || op == "-" || op == "*" || op == "/" || op == "%")
+            {
+
+                //User enter first number
+
+                Console.WriteLine("Please enter your first number.");
+                string input1 = Console.ReadLine();
+
+                //Checking if num 1 is valid
+                while (int.TryParse(input1, out int output1) == false)
+                {
+                    Console.WriteLine("Please enter a vailid number!");
+                    input1 = Console.ReadLine();
+                }
+                int num1 = int.Parse(input1);
+
+                //User enters second number
+
+                Console.WriteLine("Please enter your second number.");
+                string input2 = Console.ReadLine();
+
+                //Checking if num 2 is valid
+                while (int.TryParse(input2, out int output2) == false)
+                {
+                    Console.WriteLine("Please enter a vailid number!");
+                    input2 = Console.ReadLine();
+                }
+                int num2 = int.Parse(input2);
+
+                //Operations
+
+                if (op == "+")
+                {
+                    int Answer = Calculator.Add(num1, num2);
+                    Console.WriteLine("Your answer is " + Answer + "!");
+
+
+                }
+
+                else if (op == "-")
+                {
+                    int Answer = Calculator.Minus(num1, num2);
+                    Console.WriteLine("Your answer is " + Answer + "!");
+
+
+                }
+
+                else if (op == "*")
+                {
+                    int Answer = Calculator.Multiply(num1, num2);
+                    Console.WriteLine("Your answer is " + Answer + "!");
+
+
+                } if (op == "/")
+                {
+                    int Answer = Calculator.Divide(num1, num2);
+                    Console.WriteLine("Your answer is " + Answer + "!");
+
+
+                } if (op == "%")
+                {
+                    int Answer = Calculator.Modulo(num1, num2);
+                    Console.WriteLine("Your answer is " + Answer + "!");
+                }
+
+            }
+            else
+            {
+                Console.WriteLine("Please enter a valid operator");
+                goto Start;
+            }
+            Console.WriteLine(" ");
+            goto Loop;
+
+        }
+    }
+}
