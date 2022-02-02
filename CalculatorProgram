@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -57,36 +57,30 @@ namespace FirstProject
                 {
                     int Answer = Calculator.Add(num1, num2);
                     Console.WriteLine("Your answer is " + Answer + "!");
-
-
                 }
-
                 else if (op == "-")
                 {
                     int Answer = Calculator.Minus(num1, num2);
                     Console.WriteLine("Your answer is " + Answer + "!");
-
-
                 }
 
                 else if (op == "*")
                 {
                     int Answer = Calculator.Multiply(num1, num2);
                     Console.WriteLine("Your answer is " + Answer + "!");
-
-
-                } if (op == "/")
+                } 
+                
+                else if (op == "/")
                 {
                     int Answer = Calculator.Divide(num1, num2);
                     Console.WriteLine("Your answer is " + Answer + "!");
-
-
-                } if (op == "%")
+                } 
+                
+                else if (op == "%")
                 {
                     int Answer = Calculator.Modulo(num1, num2);
                     Console.WriteLine("Your answer is " + Answer + "!");
                 }
-
             }
             else
             {
@@ -95,7 +89,6 @@ namespace FirstProject
             }
             Console.WriteLine(" ");
             goto Loop;
-
         }
     }
 }
